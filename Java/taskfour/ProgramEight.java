@@ -1,8 +1,6 @@
 package taskfour;
 
-import java.util.Arrays;
-
-public class ProgramOne {
+public class ProgramEight {
 
 	public static void main(String[] args) {
 		int arr[] = {1,5,6,8,9,1,4,3,6};
@@ -21,9 +19,6 @@ public class ProgramOne {
                 }
             }
         }
-        int[] arr1 = Arrays.copyOf(arr, n);
-        for(int i =0; i<arr1.length; i++) {
-        	System.out.println(arr1[i]);
-        }
+        System.out.println("New array length:"+ n);
 	}
 }
