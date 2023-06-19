@@ -1,0 +1,57 @@
+Excercise 1:
+
+INSERT INTO CUSTOMER VALUES (1, User1, Hyd, 6, '10:20 AM');
+INSERT INTO CUSTOMER VALUES (2, User2, Texas, 2, '11:40 AM');
+INSERT INTO CUSTOMER VALUES (3, User3, Dallas, 7, '12:10 PM');
+INSERT INTO CUSTOMER VALUES (4, User4, Irving, 98, '2:30 PM');
+INSERT INTO CUSTOMER VALUES (5, User5, Plano, 76, '4:50 PM');
+
+-------------------------------
+Excercise 2:
+
+Print Distinct City from Table Customers and Print Count Distinct City from Table Customers.
+select city, count(distinct city) as City_count from CUSTOMER;
+
+
+Write a SQL query to get the least number of quantities and the highest number of quantities bought by the user consider the OrderDetails Table.
+SELECT MAX(Quantity)as maximum, MIN(Quantity) as minimum FROM order_details;
+
+
+Print the total and an average number of quantities ordered by users, consider the OrderDetails Table. 
+Select SUM(Quantity) as sum, avg(Quantity) as average from order_details;
+
+
+Print name of the product which is present at the 5th position till the 15th position from Products table, use LIMIT keyword.
+SELECT ProductName FROM products LIMIT 5, 16;   
+
+
+Write a SQL query for all the details of the supplier whose name consists of “A” at the second position from the Suppliers table. 
+SELECT * FROM suppliers WHERE SupplierName LIKE '_A%';
+
+
+Print the details of the customer who doesn’t stay in the USA and Canada from the Customers table. 
+SELECT * from customers where country not in ('USA', 'Canada');
+--------------------
+Print the details of all the orders which were placed between the year 2020 to 2021 also print the same in descending order from the OrderDetails table. 
+Select * from orders where OrderDate between '2020-01-01' and '2021-12-31' ORDER BY order_date DESC;;
+
+
+Write a query to show the distinct city and their count from the Customers table.
+SELECT city, COUNT(*) AS count FROM Customers GROUP BY city;
+
+
+Write a query to fetch details of all employees excluding the employees with first names, “Sanjay” and “Sonia” from the Employees table. 
+SELECT * from employees where FirstName not like 'Sanjay%' and 'Sonia%';
+
+
+Duplicate a table as similar to the Suppliers table and name it as SupplierDetail. 
+CREATE TABLE SupplierDetail AS SELECT * FROM Suppliers;
+
+
+Delete customer details whose country is Venezuela and print the rest of the Customer table 
+DELETE from customers where City= 'Venezuela'
+SELECT * FROM Customers;
+
+
+
+
